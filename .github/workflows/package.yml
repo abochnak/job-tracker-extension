@@ -19,14 +19,15 @@ jobs:
 
       - name: Package ZIP
         run: |
-          zip -r ../job-tracker-extension.zip . \
+          zip -r job-tracker-extension.zip . \
             --exclude "*.git*" \
             --exclude ".github/*" \
             --exclude "config.example.json" \
+            --exclude "client-id.example.json" \
             --exclude "SETUP.md"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: job-tracker-extension
-          path: ../job-tracker-extension.zip
+          path: job-tracker-extension.zip
